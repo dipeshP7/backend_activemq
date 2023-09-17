@@ -14,4 +14,10 @@ run start or activemq start
 
 active-mq.broker-url=tcp://localhost:61616
 
+#create config first 
+
+#then create producer
+
+#at last create consumer
+
 
