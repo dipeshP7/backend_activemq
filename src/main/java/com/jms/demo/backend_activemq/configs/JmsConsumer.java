@@ -24,4 +24,13 @@ public class JmsConsumer implements MessageListener {
           log.error("Received Exception : "+ e);
       }
   }
+
+    @JmsListener(destination = "${active-mq.queue}")
+    public void onMessageQueue(String message) {
+        try{
+            log.info("Received Queue Message: "+ message);
+        } catch(Exception e) {
+            log.error("Received Exception : "+ e);
+        }
+    }
 }

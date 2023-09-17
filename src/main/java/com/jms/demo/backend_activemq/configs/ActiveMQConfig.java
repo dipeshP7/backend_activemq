@@ -44,19 +44,6 @@ public class ActiveMQConfig {
       return  jmsTemplate;
   }
 
-    /**
-     * This method will set activemq
-     * connection factory object
-     * this used for consumer
-     * @return ConnectionFactory
-     */
-//    @Bean
-//    public ConnectionFactory connectionFactoryConsumer(){
-//        ActiveMQConnectionFactory activeMQConnectionFactory  = new ActiveMQConnectionFactory();
-//        activeMQConnectionFactory.setBrokerURL(brokerUrl);
-//        activeMQConnectionFactory.setTrustedPackages(Arrays.asList("com.jms.demo.backend_activemq"));
-//        return  activeMQConnectionFactory;
-//    }
 
     /**
      * This method return

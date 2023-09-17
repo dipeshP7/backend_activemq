@@ -17,9 +17,15 @@ public class JmsActionController {
         return ResponseEntity.ok("init method called successfully");
   }
 
-  @PostMapping(value = "/api/demo")
+  @PostMapping(value = "/api/demo/topic")
   public JmsDemoEntity sendMessage(@RequestBody JmsDemoEntity jmsDemoEntity) {
         jmsProducer.sendMessage(jmsDemoEntity);
         return jmsDemoEntity;
+    }
+
+    @PostMapping(value = "/api/demo/queue")
+    public String sendMessage(@RequestBody String message) {
+        jmsProducer.sendQueueMessage(message);
+        return message;
     }
 }
