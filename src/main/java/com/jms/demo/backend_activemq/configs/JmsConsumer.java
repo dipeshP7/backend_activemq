@@ -25,6 +25,18 @@ public class JmsConsumer implements MessageListener {
       }
   }
 
+    @JmsListener(destination = "${active-mq.topic}")
+    public void onMessage2(Message message) {
+        try{
+            ObjectMessage objectMessage = (ObjectMessage)message;
+            JmsDemoEntity jmsDemoEntity = (JmsDemoEntity)objectMessage.getObject();
+            //do additional processing
+            log.info("Received Message2 : "+ jmsDemoEntity.toString());
+        } catch(Exception e) {
+            log.error("Received Exception : "+ e);
+        }
+    }
+
     @JmsListener(destination = "${active-mq.queue}")
     public void onMessageQueue(String message) {
         try{

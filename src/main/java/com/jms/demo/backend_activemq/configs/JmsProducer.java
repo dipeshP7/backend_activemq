@@ -17,6 +17,12 @@ public class JmsProducer {
 
   @Autowired JmsTemplate jmsTemplate;
 
+  /**
+   * this method will use
+   * for sending topic based
+   * message
+   * @param jmsDemoEntity
+   */
   public void sendMessage(JmsDemoEntity jmsDemoEntity){
     log.info("Attempting to send message to topic {}", topic);
     try{
@@ -26,6 +32,12 @@ public class JmsProducer {
     }
   }
 
+  /**
+   * this method will use
+   * for sending queue
+   * based message
+   * @param message
+   */
   public void sendQueueMessage(String message){
     log.info("Attempting to send message to queue {}", queue);
     try{
